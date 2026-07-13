@@ -352,7 +352,7 @@ function generateHTML() {
   var html = '<!DOCTYPE html>\n<html lang="en">\n<head>\n' +
     '  <meta charset="UTF-8">\n' +
     '  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n' +
-    '  <title>Composio Integration Landscape Analysis</title>\n' +
+    '  <title>Composio Toolkit Research Agent</title>\n' +
     '  <meta name="description" content="Professional developer dashboard evaluating 100 SaaS integration points for buildability, access, and protocol standards.">\n' +
     '  <link rel="preconnect" href="https://fonts.googleapis.com">\n' +
     '  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">\n' +
@@ -360,8 +360,9 @@ function generateHTML() {
     "</head>\n<body>\n" +
 
     // NAVIGATION HEADER
-    '<div class="navbar"><div class="container-fluid">\n' +
+    '<div class="navbar"><div class="container-fluid" style="display:flex;justify-content:space-between;align-items:center">\n' +
     '  <div class="logo">COMPOSIO <span class="logo-light">RESEARCH</span></div>\n' +
+    '  <a href="https://github.com/SalmanNajah/composio-toolkit" target="_blank" rel="noopener" style="color:var(--text-muted);font-size:0.75rem;text-decoration:none;display:flex;align-items:center;gap:4px;font-weight:500">GitHub Repository ↗</a>\n' +
     '</div></div>\n' +
 
     // MAIN WORKSPACE
@@ -369,7 +370,7 @@ function generateHTML() {
 
     // HERO TEXT
     '<div class="hero-block">\n' +
-    '  <h1>Composio Integration Research</h1>\n' +
+    '  <h1>Composio Toolkit Research Agent</h1>\n' +
     '  <p>We researched 100 SaaS apps to see what auth they use, if they have self-serve API access, and if we can build a toolkit for them today.</p>\n' +
     '</div>\n' +
 
