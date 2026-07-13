@@ -57,7 +57,7 @@ body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--tex
 .chart-card h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 20px; }
 .bar-chart { display: flex; flex-direction: column; gap: 14px; }
 .bar-row { display: flex; align-items: center; gap: 16px; }
-.bar-label { width: 140px; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bar-label { width: 210px; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .bar-track { flex: 1; height: 18px; background: #09090b; overflow: hidden; }
 .bar-fill { height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 0.7rem; font-weight: 700; color: #fff; font-family: var(--font-mono); }
 .bar-pct { opacity: 0.7; font-weight: 400; font-size: 0.65rem; }
@@ -167,19 +167,19 @@ tr.row-corrected td { background: rgba(14, 165, 233, 0.025); }
   <div class="card-detail">OAuth2 is the primary method, used by 44 surveyed platforms.</div>
 </div>
 <div class="finding-card">
-  <div class="card-metric">79</div>
+  <div class="card-metric">79/100</div>
   <div class="card-title">Self-Serve Platforms</div>
   <div class="card-detail">79 out of 100 platforms offer immediate, self-serve developer access.</div>
 </div>
 <div class="finding-card">
-  <div class="card-metric">69</div>
+  <div class="card-metric">69/100</div>
   <div class="card-title">Immediate Integrations</div>
   <div class="card-detail">69 platforms present no major barriers and are ready for immediate toolkit development.</div>
 </div>
 <div class="finding-card">
-  <div class="card-metric">12</div>
-  <div class="card-title">Primary Blocker</div>
-  <div class="card-detail">Gated/partner access requirements block toolkit creation for 12 apps.</div>
+  <div class="card-metric">31/100</div>
+  <div class="card-title">Integration Barriers</div>
+  <div class="card-detail">31 platforms present development friction (15 Moderate, 11 Hard, 5 Not Feasible).</div>
 </div>
   </div>
   <div class="charts-grid">
@@ -189,49 +189,49 @@ tr.row-corrected td { background: rgba(14, 165, 233, 0.025); }
 <div class="bar-row">
   <div class="bar-label">OAuth2</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:44%">44 <span class="bar-pct">44%</span></div>
+    <div class="bar-fill auth" style="width:44%">44/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">API Key</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:39%">39 <span class="bar-pct">39%</span></div>
+    <div class="bar-fill auth" style="width:39%">39/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">Bearer Token</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:9%">9 <span class="bar-pct">9%</span></div>
+    <div class="bar-fill auth" style="width:9%">9/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">None</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:3%">3 <span class="bar-pct">3%</span></div>
+    <div class="bar-fill auth" style="width:8%">3/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">Basic</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:3%">2 <span class="bar-pct">2%</span></div>
+    <div class="bar-fill auth" style="width:8%">2/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">OAuth2 , Bearer Token</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:3%">1 <span class="bar-pct">1%</span></div>
+    <div class="bar-fill auth" style="width:8%">1/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">OAuth1</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:3%">1 <span class="bar-pct">1%</span></div>
+    <div class="bar-fill auth" style="width:8%">1/100</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">API key</div>
   <div class="bar-track">
-    <div class="bar-fill auth" style="width:3%">1 <span class="bar-pct">1%</span></div>
+    <div class="bar-fill auth" style="width:8%">1/100</div>
   </div>
 </div></div>
     </div>
@@ -239,21 +239,21 @@ tr.row-corrected td { background: rgba(14, 165, 233, 0.025); }
       <h3>Developer Access</h3>
       <div class="bar-chart">
 <div class="bar-row">
-  <div class="bar-label">Yes</div>
+  <div class="bar-label">Yes (Instant Self-Serve)</div>
   <div class="bar-track">
-    <div class="bar-fill serve" style="width:79%">79 <span class="bar-pct">79%</span></div>
+    <div class="bar-fill serve" style="width:79%">79/100</div>
   </div>
 </div>
 <div class="bar-row">
-  <div class="bar-label">Partial</div>
+  <div class="bar-label">Partial (Waitlist/Paid)</div>
   <div class="bar-track">
-    <div class="bar-fill serve" style="width:7%">7 <span class="bar-pct">7%</span></div>
+    <div class="bar-fill serve" style="width:8%">7/100</div>
   </div>
 </div>
 <div class="bar-row">
-  <div class="bar-label">No</div>
+  <div class="bar-label">No (Sales Gated)</div>
   <div class="bar-track">
-    <div class="bar-fill serve" style="width:14%">14 <span class="bar-pct">14%</span></div>
+    <div class="bar-fill serve" style="width:14%">14/100</div>
   </div>
 </div></div>
     </div>
@@ -261,27 +261,27 @@ tr.row-corrected td { background: rgba(14, 165, 233, 0.025); }
       <h3>Buildability Verdict</h3>
       <div class="bar-chart">
 <div class="bar-row">
-  <div class="bar-label">Easy</div>
+  <div class="bar-label">Easy (Build Today)</div>
   <div class="bar-track">
-    <div class="bar-fill build" style="width:69%">69 <span class="bar-pct">69%</span></div>
+    <div class="bar-fill build" style="width:69%">69/100</div>
   </div>
 </div>
 <div class="bar-row">
-  <div class="bar-label">Moderate</div>
+  <div class="bar-label">Moderate (Some Friction)</div>
   <div class="bar-track">
-    <div class="bar-fill build" style="width:15%">15 <span class="bar-pct">15%</span></div>
+    <div class="bar-fill build" style="width:15%">15/100</div>
   </div>
 </div>
 <div class="bar-row">
-  <div class="bar-label">Hard</div>
+  <div class="bar-label">Hard (Major Blockers)</div>
   <div class="bar-track">
-    <div class="bar-fill build" style="width:11%">11 <span class="bar-pct">11%</span></div>
+    <div class="bar-fill build" style="width:11%">11/100</div>
   </div>
 </div>
 <div class="bar-row">
-  <div class="bar-label">Not Feasible</div>
+  <div class="bar-label">Not Feasible (CLI/Local)</div>
   <div class="bar-track">
-    <div class="bar-fill build" style="width:5%">5 <span class="bar-pct">5%</span></div>
+    <div class="bar-fill build" style="width:8%">5/100</div>
   </div>
 </div></div>
     </div>
@@ -351,31 +351,31 @@ tr.row-corrected td { background: rgba(14, 165, 233, 0.025); }
 <div class="bar-row">
   <div class="bar-label">Partner/sales gate</div>
   <div class="bar-track">
-    <div class="bar-fill red-chart" style="width:100%">12 <span class="bar-pct">100%</span></div>
+    <div class="bar-fill red-chart" style="width:100%">12/12</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">Other</div>
   <div class="bar-track">
-    <div class="bar-fill red-chart" style="width:75%">9 <span class="bar-pct">75%</span></div>
+    <div class="bar-fill red-chart" style="width:75%">9/12</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">No/limited public API</div>
   <div class="bar-track">
-    <div class="bar-fill red-chart" style="width:42%">5 <span class="bar-pct">42%</span></div>
+    <div class="bar-fill red-chart" style="width:42%">5/12</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">Paid plan required</div>
   <div class="bar-track">
-    <div class="bar-fill red-chart" style="width:25%">3 <span class="bar-pct">25%</span></div>
+    <div class="bar-fill red-chart" style="width:25%">3/12</div>
   </div>
 </div>
 <div class="bar-row">
   <div class="bar-label">Complex auth / OAuth setup</div>
   <div class="bar-track">
-    <div class="bar-fill red-chart" style="width:17%">2 <span class="bar-pct">17%</span></div>
+    <div class="bar-fill red-chart" style="width:17%">2/12</div>
   </div>
 </div></div>
     </div>

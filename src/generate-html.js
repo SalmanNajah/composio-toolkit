@@ -51,11 +51,24 @@ function makeBarChart(data, total, cssClass) {
       var key = entry[0];
       var value = entry[1];
       var pct = Math.round((value / total) * 100);
+      
+      var displayKey = key;
+      if (cssClass === "serve") {
+        if (key === "Yes") displayKey = "Yes (Instant Self-Serve)";
+        if (key === "Partial") displayKey = "Partial (Waitlist/Paid)";
+        if (key === "No") displayKey = "No (Sales Gated)";
+      } else if (cssClass === "build") {
+        if (key === "Easy") displayKey = "Easy (Build Today)";
+        if (key === "Moderate") displayKey = "Moderate (Some Friction)";
+        if (key === "Hard") displayKey = "Hard (Major Blockers)";
+        if (key === "Not Feasible") displayKey = "Not Feasible (CLI/Local)";
+      }
+
       return [
         '<div class="bar-row">',
-        '  <div class="bar-label">' + key + "</div>",
+        '  <div class="bar-label">' + displayKey + "</div>",
         '  <div class="bar-track">',
-        '    <div class="bar-fill ' + cssClass + '" style="width:' + Math.max(pct, 3) + '%">' + value + ' <span class="bar-pct">' + pct + '%</span></div>',
+        '    <div class="bar-fill ' + cssClass + '" style="width:' + Math.max(pct, 8) + '%">' + value + "/" + total + '</div>',
         "  </div>",
         "</div>",
       ].join("\n");
@@ -68,8 +81,7 @@ function makeFindingCards(patterns, total) {
   var authTop = authEntries.length > 0 ? authEntries[0] : ["N/A", 0];
   var ss = patterns.self_serve_overall;
   var bd = patterns.buildability_overall;
-  var blockerEntries = Object.entries(patterns.top_blockers || {});
-  var blockerTop = blockerEntries.length > 0 ? blockerEntries[0] : ["None", 0];
+  var barriersCount = (bd.Moderate || 0) + (bd.Hard || 0) + (bd["Not Feasible"] || 0);
 
   return [
     '<div class="finding-card">',
@@ -78,19 +90,19 @@ function makeFindingCards(patterns, total) {
     '  <div class="card-detail">' + authTop[0] + " is the primary method, used by " + authTop[1] + " surveyed platforms.</div>",
     "</div>",
     '<div class="finding-card">',
-    '  <div class="card-metric">' + ss.Yes + "</div>",
+    '  <div class="card-metric">' + ss.Yes + "/" + total + "</div>",
     '  <div class="card-title">Self-Serve Platforms</div>',
     '  <div class="card-detail">' + ss.Yes + " out of " + total + " platforms offer immediate, self-serve developer access.</div>",
     "</div>",
     '<div class="finding-card">',
-    '  <div class="card-metric">' + bd.Easy + "</div>",
+    '  <div class="card-metric">' + bd.Easy + "/" + total + "</div>",
     '  <div class="card-title">Immediate Integrations</div>',
     '  <div class="card-detail">' + bd.Easy + " platforms present no major barriers and are ready for immediate toolkit development.</div>",
     "</div>",
     '<div class="finding-card">',
-    '  <div class="card-metric">' + blockerTop[1] + "</div>",
-    '  <div class="card-title">Primary Blocker</div>',
-    '  <div class="card-detail">Gated/partner access requirements block toolkit creation for ' + blockerTop[1] + " apps.</div>",
+    '  <div class="card-metric">' + barriersCount + "/" + total + "</div>",
+    '  <div class="card-title">Integration Barriers</div>',
+    '  <div class="card-detail">' + barriersCount + " platforms present development friction (15 Moderate, 11 Hard, 5 Not Feasible).</div>",
     "</div>",
   ].join("\n");
 }
@@ -550,7 +562,7 @@ var CSS = [
   ".chart-card h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 20px; }",
   ".bar-chart { display: flex; flex-direction: column; gap: 14px; }",
   ".bar-row { display: flex; align-items: center; gap: 16px; }",
-  ".bar-label { width: 140px; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }",
+  ".bar-label { width: 210px; font-size: 0.75rem; color: var(--text-muted); font-family: var(--font-mono); text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }",
   ".bar-track { flex: 1; height: 18px; background: #09090b; overflow: hidden; }",
   ".bar-fill { height: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; font-size: 0.7rem; font-weight: 700; color: #fff; font-family: var(--font-mono); }",
   ".bar-pct { opacity: 0.7; font-weight: 400; font-size: 0.65rem; }",
