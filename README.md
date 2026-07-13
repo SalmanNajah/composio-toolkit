@@ -23,10 +23,11 @@ npm run generate      # Rebuild the interactive dashboard (dist/index.html)
 
 ## How It Works
 
-The research pipeline operates in three modular stages to ensure data integrity:
-1. **Extraction (AI)**: `src/research-agent.js` extracts API specifications using Gemini.
-2. **Audit (Verification)**: `src/run-verification-loop.js` crawls developer documentation to flag potential drifts.
-3. **Ground Truth (Human)**: The reviewer reviews findings in `manual-verification.md` and applies final database overrides via `npm run apply-manual`.
+To address the case study criteria, the pipeline operates under four core components:
+1. **The Agent**: A modular Node.js agent (`src/research-agent.js`) that uses Gemini to evaluate 100 SaaS apps, extracting their integration capabilities, auth methods, and buildability constraints.
+2. **The Verification**: An automated audit loop (`src/run-verification-loop.js`) that crawls developer documentation, cross-referencing and grading the agent's findings to spot accuracy drifts.
+3. **Human-in-the-Loop**: The QA stage where a human reviewer audits edge-cases and saves final overrides via `npm run apply-manual`.
+4. **The Proof**: The runnable pipeline trigger (`npm run pipeline`) that coordinates the agent, verify loop, and manual overrides to generate the interactive dashboard (`dist/index.html`).
 
 ## Project Structure
 
