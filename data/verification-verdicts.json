@@ -1,0 +1,272 @@
+[
+  {
+    "app_name": "Salesforce",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "OAuth2",
+        "reason": "Salesforce primarily uses OAuth 2.0 for API authentication via Connected Apps."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Developers can sign up for a free Salesforce Developer Edition account and create Connected Apps instantly."
+      },
+      "api_type": {
+        "status": "PARTIALLY_CORRECT",
+        "correct_value": "REST+GraphQL",
+        "reason": "The agent only mentioned REST, but Salesforce provides robust support for both REST and GraphQL (via Lightning Platform APIs)."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "Salesforce has extensive, well-documented APIs, standard OAuth2 flows, and a mature developer ecosystem, meeting all criteria for 'Easy'."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the primary auth, self-serve status, and buildability. The only minor drift was omitting the GraphQL capability, which is a standard part of the Salesforce developer toolkit."
+  },
+  {
+    "app_name": "DealCloud",
+    "verdicts": {
+      "auth_primary": {
+        "status": "INCORRECT",
+        "correct_value": "API Key",
+        "reason": "DealCloud documentation explicitly references 'API Keys' as the primary mechanism for authentication, rather than OAuth2."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "No",
+        "reason": "DealCloud is an enterprise-grade CRM platform that typically requires manual provisioning and sales contact for API access."
+      },
+      "api_type": {
+        "status": "CORRECT",
+        "correct_value": "REST",
+        "reason": "The documentation confirms a RESTful API structure."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Hard",
+        "reason": "Due to the lack of self-serve developer access and the enterprise-gated nature of the platform, it is classified as Hard."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the buildability and self-serve status, but incorrectly identified the primary authentication method as OAuth2 instead of API Keys."
+  },
+  {
+    "app_name": "Slack",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "OAuth2",
+        "reason": "Slack primarily uses OAuth 2.0 for third-party integrations and app authorization."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Developers can create Slack apps instantly via the Slack API dashboard without manual approval."
+      },
+      "api_type": {
+        "status": "PARTIALLY_CORRECT",
+        "correct_value": "REST",
+        "reason": "While the agent correctly identified REST, Slack also provides a significant Webhook and Events API architecture, though REST is the primary request-response mechanism."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "Slack provides extensive documentation, SDKs (Bolt), and a straightforward self-serve developer portal, meeting all criteria for 'Easy'."
+      }
+    },
+    "overall_verdict": "CORRECT",
+    "audit_notes": "The agent's assessment is accurate. Slack is a standard, well-documented platform with a mature REST API and self-serve OAuth flow."
+  },
+  {
+    "app_name": "Shopify",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "OAuth2",
+        "reason": "Shopify uses OAuth2 for public and custom apps as the primary authentication mechanism."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Developers can register for a Shopify Partner account and create apps via the Dev Dashboard without manual sales intervention."
+      },
+      "api_type": {
+        "status": "PARTIALLY_CORRECT",
+        "correct_value": "REST+GraphQL",
+        "reason": "While the agent identified REST, Shopify has transitioned to a GraphQL-first approach, and new apps are required to use the GraphQL Admin API."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "Shopify provides extensive documentation, official client libraries, and a self-serve developer portal, meeting all criteria for 'Easy' buildability."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the primary auth, self-serve status, and buildability. However, it failed to mention GraphQL, which is now the primary and required API for new Shopify integrations."
+  },
+  {
+    "app_name": "Firecrawl",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "Bearer Token",
+        "reason": "The documentation explicitly requires an Authorization header with a Bearer token."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Firecrawl provides a public developer platform where API keys can be generated without manual sales intervention."
+      },
+      "api_type": {
+        "status": "CORRECT",
+        "correct_value": "REST",
+        "reason": "The documentation describes standard HTTP requests with specific endpoints and status codes, confirming a RESTful architecture."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "The API is well-documented, uses standard REST/Bearer auth, and is fully self-serve, meeting all criteria for 'Easy' buildability."
+      }
+    },
+    "overall_verdict": "CORRECT",
+    "audit_notes": "The agent's claims are fully supported by the provided documentation. The platform is a standard REST API with straightforward authentication and self-serve access."
+  },
+  {
+    "app_name": "Sherlock",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "None",
+        "reason": "Sherlock is a local Python CLI tool that does not utilize authentication mechanisms for its core functionality."
+      },
+      "self_serve": {
+        "status": "INCORRECT",
+        "correct_value": "No",
+        "reason": "Self-serve implies a developer portal or API access; as a local CLI tool, there is no 'service' to register for or access via API credentials."
+      },
+      "api_type": {
+        "status": "CORRECT",
+        "correct_value": "CLI-only",
+        "reason": "The tool is designed exclusively for command-line execution and lacks a hosted web API."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Not Feasible",
+        "reason": "Per Composio rules, local CLI tools without a hosted web API are classified as Not Feasible for standard hosted agent toolkits."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the tool as a CLI-only, Not Feasible project. However, the 'Self-Serve' claim is technically incorrect because the tool is an open-source library/CLI, not a SaaS platform with a developer API to 'self-serve' into."
+  },
+  {
+    "app_name": "GitHub",
+    "verdicts": {
+      "auth_primary": {
+        "status": "PARTIALLY_CORRECT",
+        "correct_value": "OAuth2|Personal Access Tokens",
+        "reason": "While OAuth2 is supported, Personal Access Tokens (PATs) are the most common primary method for developer-led integrations."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "GitHub provides instant access to API credentials via the developer settings portal."
+      },
+      "api_type": {
+        "status": "PARTIALLY_CORRECT",
+        "correct_value": "REST+GraphQL",
+        "reason": "GitHub provides both a robust REST API and a comprehensive GraphQL API."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "GitHub has excellent documentation, standard authentication, and a fully public, self-serve API."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the platform's ease of build and self-serve nature, but failed to mention the GraphQL API and the prevalence of Personal Access Tokens as a primary authentication method."
+  },
+  {
+    "app_name": "Snowflake",
+    "verdicts": {
+      "auth_primary": {
+        "status": "INCORRECT",
+        "correct_value": "Key-Pair Authentication",
+        "reason": "Snowflake primarily uses Key-Pair authentication (RSA) for API access, not standard OAuth2 for general service-to-service integration."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Developers can sign up for a Snowflake trial and generate credentials independently."
+      },
+      "api_type": {
+        "status": "INCORRECT",
+        "correct_value": "REST",
+        "reason": "Snowflake provides a REST API for SQL execution, but it is not a general-purpose SaaS API; it is a database interface."
+      },
+      "buildability": {
+        "status": "INCORRECT",
+        "correct_value": "Moderate",
+        "reason": "While a REST API exists, the authentication (RSA key-pair) and the requirement to manage database-level permissions make it more complex than a standard 'Easy' OAuth2 integration."
+      }
+    },
+    "overall_verdict": "INCORRECT",
+    "audit_notes": "The agent incorrectly identified the authentication mechanism as OAuth2. Snowflake requires RSA key-pair authentication for its REST API, which adds significant implementation complexity compared to standard OAuth2 flows."
+  },
+  {
+    "app_name": "Stripe",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "API Key",
+        "reason": "Stripe primarily uses API keys (Secret/Restricted) for authentication as documented."
+      },
+      "self_serve": {
+        "status": "CORRECT",
+        "correct_value": "Yes",
+        "reason": "Developers can sign up for a Stripe account and generate API keys instantly via the dashboard."
+      },
+      "api_type": {
+        "status": "CORRECT",
+        "correct_value": "REST",
+        "reason": "The Stripe API is explicitly documented as a RESTful API."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Easy",
+        "reason": "Stripe provides extensive documentation, official client libraries, and immediate access to sandbox environments, meeting all criteria for 'Easy'."
+      }
+    },
+    "overall_verdict": "CORRECT",
+    "audit_notes": "The agent's claims are fully supported by the provided documentation and standard industry knowledge of the Stripe API."
+  },
+  {
+    "app_name": "Mermaid CLI",
+    "verdicts": {
+      "auth_primary": {
+        "status": "CORRECT",
+        "correct_value": "None",
+        "reason": "The tool is a local CLI utility and does not require authentication."
+      },
+      "self_serve": {
+        "status": "INCORRECT",
+        "correct_value": "No",
+        "reason": "Self-serve in the context of Composio refers to API access; since there is no API, the concept of self-serve developer access to a platform does not apply."
+      },
+      "api_type": {
+        "status": "CORRECT",
+        "correct_value": "CLI-only",
+        "reason": "The tool is strictly a command-line interface for local execution."
+      },
+      "buildability": {
+        "status": "CORRECT",
+        "correct_value": "Not Feasible",
+        "reason": "As a local CLI tool without a hosted web API, it cannot be integrated as a standard hosted agent toolkit."
+      }
+    },
+    "overall_verdict": "PARTIALLY_CORRECT",
+    "audit_notes": "The agent correctly identified the tool as CLI-only and Not Feasible for buildability. However, the 'Self-serve' claim is technically incorrect because the tool lacks a developer platform or API to 'serve' in the first place."
+  }
+]

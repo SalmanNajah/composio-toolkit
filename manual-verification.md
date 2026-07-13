@@ -1,0 +1,285 @@
+# Human-in-the-Loop Manual Verification
+
+Use this file to review the agent's research. Review the docs for each platform below, update the `VERDICT` and any `CORRECT_*` fields with your findings, and run `npm run apply-manual` to update the database (`data/research-results.json`) and regenerate the HTML report.
+
+---
+
+### 1. Salesforce
+- **Docs URL**: https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/intro_what_is_rest_api.htm
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2", "Bearer Token"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Developers can sign up for a free Salesforce Developer Edition account to access the REST and SOAP APIs immediately.`
+  - API Type: `REST`
+  - API Breadth: `Broad`
+  - API Breadth Detail: `Extensive API surface covering objects, queries (SOQL), metadata, chatter, and custom Apex REST endpoints.`
+  - Has MCP: `Community`
+  - MCP Detail: `Various community-maintained MCP servers exist on GitHub for Salesforce integration.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECT
+- **CORRECT_AUTH_PRIMARY**:
+- **CORRECT_AUTH_METHODS**:
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Verified the agent claims in docs.
+
+### 2. Stripe
+- **Docs URL**: https://docs.stripe.com/api
+- **Agent Claims**:
+  - Auth Primary: `API Key`
+  - Auth Methods: `["API Key"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Developers can sign up instantly and get test API keys immediately without any approval process.`
+  - API Type: `REST`
+  - API Breadth: `Broad`
+  - API Breadth Detail: `Comprehensive REST API covering charges, customers, subscriptions, payment intents, and webhooks.`
+  - Has MCP: `Community`
+  - MCP Detail: `Community MCP servers are available for Stripe on GitHub.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECTED
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: `["API Key", "OAuth2]`
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Updated auth methods.
+
+### 3. Slack
+- **Docs URL**: https://api.slack.com/
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2", "Bearer Token"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Anyone can create a Slack app on their own workspace for free and generate bot tokens immediately.`
+  - API Type: `REST`
+  - API Breadth: `Broad`
+  - API Breadth Detail: `Hundreds of Web API methods, WebSockets (Socket Mode), Events API, and custom workflows.`
+  - Has MCP: `Yes`
+  - MCP Detail: `Official and community MCP servers exist for Slack.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECT
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: 
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Verified the agent claims in docs.
+
+### 4. Shopify
+- **Docs URL**: https://shopify.dev/docs/api/admin-rest
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2", "API Key"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Developers can sign up for a Shopify Partner account for free and create development stores to access the API immediately.`
+  - API Type: `REST`
+  - API Breadth: `Broad`
+  - API Breadth Detail: `Extensive coverage of e-commerce workflows (products, orders, customers, checkouts) but admin REST API has some limitations.`
+  - Has MCP: `Community`
+  - MCP Detail: `Community MCP servers exist for Shopify on GitHub.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECTED
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: 
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: Official
+- **CORRECT_MCP_DETAIL**: The official Shopify Dev MCP server.
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Updated MCP info.
+
+### 5. GitHub
+- **Docs URL**: https://docs.github.com/en/rest
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2", "Bearer Token"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Anyone with a GitHub account can create Personal Access Tokens (PATs) or register GitHub Apps to authenticate API calls instantly.`
+  - API Type: `REST`
+  - API Breadth: `Broad`
+  - API Breadth Detail: `Massive REST API coverage for repositories, issues, PRs, actions, organizations, and users.`
+  - Has MCP: `Yes`
+  - MCP Detail: `Official GitHub MCP server maintained by Model Context Protocol team.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECT
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: 
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Verified the agent claims in docs.
+
+### 6. DealCloud
+- **Docs URL**: https://api.docs.dealcloud.com/
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2"]`
+  - Self-Serve: `No`
+  - Self-Serve Detail: `Enterprise software; requires a paid subscription, client authorization, and custom configuration by the host organization.`
+  - API Type: `REST`
+  - API Breadth: `Moderate`
+  - API Breadth Detail: `REST API covering entities, deals, contacts, lists, and query metadata, but require private tenant config.`
+  - Has MCP: `No`
+  - MCP Detail: `No public MCP server exists for DealCloud.`
+  - Buildability: `Hard`
+  - Blocker: `Requires Enterprise account and tenant-specific configuration.`
+- **VERDICT**: CORRECTED
+- **CORRECT_AUTH_PRIMARY**:
+- **CORRECT_AUTH_METHODS**: OAuth2 , Bearer Token
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Added auth info.
+
+### 7. Sherlock
+- **Docs URL**: https://github.com/sherlock-project/sherlock
+- **Agent Claims**:
+  - Auth Primary: `None`
+  - Auth Methods: `["None"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Open-source tool hosted on GitHub; no authentication required to download, build, or run locally.`
+  - API Type: `CLI-only`
+  - API Breadth: `Narrow`
+  - Agent claims notes: `No public API endpoint; designed strictly to run as a CLI python command searching social usernames.`
+  - Has MCP: `No`
+  - MCP Detail: `No official or community MCP server available.`
+  - Buildability: `Not Feasible`
+  - Blocker: `Sherlock is a CLI tool / Python script, not a SaaS API.`
+- **VERDICT**: CORRECT
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: 
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**:  Verified the agent claims in docs.
+
+### 8. Firecrawl
+- **Docs URL**: https://docs.firecrawl.dev/api-reference/introduction
+- **Agent Claims**:
+  - Auth Primary: `Bearer Token`
+  - Auth Methods: `["Bearer Token"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Instant signup for a free account with starter credits; keys are available immediately.`
+  - API Type: `REST`
+  - API Breadth: `Moderate`
+  - API Breadth Detail: `REST API endpoints for crawl, scrape, check status, and retrieve scraped content.`
+  - Has MCP: `Community`
+  - MCP Detail: `Community MCP servers exist for Firecrawl on GitHub.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECTED
+- **CORRECT_AUTH_PRIMARY**: `API key`
+- **CORRECT_AUTH_METHODS**: `["API key", "Bearer Token"]`
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: Official
+- **CORRECT_MCP_DETAIL**: MCP server is open-source and available on GitHub.
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Updated MCP info.
+
+### 9. Snowflake
+- **Docs URL**: https://docs.snowflake.com/en/developer-guide/sql-api/index
+- **Agent Claims**:
+  - Auth Primary: `OAuth2`
+  - Auth Methods: `["OAuth2", "Bearer Token", "API Key"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Snowflake offers a 30-day free trial containing standard credits; developer accounts can access APIs immediately.`
+  - API Type: `REST`
+  - API Breadth: `Moderate`
+  - API Breadth Detail: `Snowflake SQL API is a REST API that lets you execute SQL statements and manage warehouse sessions.`
+  - Has MCP: `Community`
+  - MCP Detail: `Community MCP servers exist for Snowflake integration.`
+  - Buildability: `Easy`
+  - Blocker: `None`
+- **VERDICT**: CORRECTED
+- **CORRECT_AUTH_PRIMARY**: OAuth2
+- **CORRECT_AUTH_METHODS**: OAuth2, key-pair JWTs, Bearer Token
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**: Updated auth info.
+
+### 10. Mermaid CLI
+- **Docs URL**: https://github.com/mermaid-js/mermaid-cli
+- **Agent Claims**:
+  - Auth Primary: `None`
+  - Auth Methods: `["None"]`
+  - Self-Serve: `Yes`
+  - Self-Serve Detail: `Open source CLI tool, no auth, can be installed locally via npm or run in Docker immediately.`
+  - API Type: `CLI-only`
+  - API Breadth: `Narrow`
+  - Agent claims notes: `Command line utility strictly for converting markdown diagrams into PNG/SVG images.`
+  - Has MCP: `No`
+  - MCP Detail: `No MCP server exists for Mermaid CLI.`
+  - Buildability: `Not Feasible`
+  - Blocker: `Mermaid CLI is an npm command-line package, not a cloud SaaS API.`
+- **VERDICT**: CORRECT
+- **CORRECT_AUTH_PRIMARY**: 
+- **CORRECT_AUTH_METHODS**: 
+- **CORRECT_SELF_SERVE**: 
+- **CORRECT_SELF_SERVE_DETAIL**: 
+- **CORRECT_API_TYPE**: 
+- **CORRECT_API_BREADTH**: 
+- **CORRECT_API_BREADTH_DETAIL**: 
+- **CORRECT_HAS_MCP**: 
+- **CORRECT_MCP_DETAIL**: 
+- **CORRECT_BUILDABILITY**: 
+- **CORRECT_BLOCKER**: 
+- **NOTES**:  Verified the agent claims in docs.
