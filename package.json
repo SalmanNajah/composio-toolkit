@@ -1,0 +1,16 @@
+{
+  "name": "composio-toolkit-research",
+  "version": "1.0.0",
+  "description": "AI agent that researches 100 SaaS apps for Composio toolkit buildability",
+  "type": "module",
+  "scripts": {
+    "research": "node src/research-agent.js",
+    "verify": "node src/run-verification-loop.js",
+    "generate": "node src/generate-html.js",
+    "pipeline": "node src/pipeline.js",
+    "apply-manual": "node src/apply-manual-verdicts.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0"
+  }
+}
